@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -29,5 +35,15 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+/* Ensure the sidebar closes automatically on smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
   }
 }
